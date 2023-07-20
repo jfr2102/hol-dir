@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="index.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+    <div class="container">
+        <div id="content">
+            Hol dir:
+            <a id="shoppingLink" href="" style="color: white;"></a>
+        </div>
+    </div>
+</body>
+<script>
+    {
+        const url = window.location.href;
+        let searchItem;
+        if (url.split('/').length > 3) {
+            searchItem = url.substring(url.lastIndexOf('/') + 1);
+        } else {
+            searchItem = "Anno+1800";
+        }
+        const targetsearch = `https://www.google.de/search?tbm=shop&hl=de&psb=1&ved=2ahUKEwjk5vusjp6AAxWBS0ECHcLVAakQu-kFegQIABAL&q=${searchItem}&gs_lcp=Cgtwcm9kdWN0cy1jYxADUABYAGAAaABwAHgAgAEAiAEAkgEAmAEA&sclient=products-cc`
+        const shoppingLink = document.getElementById("shoppingLink");
+        shoppingLink.setAttribute("href", targetsearch)
+        const displaySearchItem = searchItem.replace("+", " ");
+        shoppingLink.innerHTML = displaySearchItem;
+        document.getElementById("iframe").setAttribute("src", targetsearch);
+    }</script>
