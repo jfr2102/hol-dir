@@ -12,16 +12,15 @@
 <script>
     {
         const url = window.location.href;
-        let searchItem;
-        if (url.split('/').length > 3) {
-            searchItem = url.substring(url.lastIndexOf('/') + 1);
-        } else {
+        let searchItem = (url.indexOf('?') > 0) ?
+            url.substring(url.lastIndexOf('?') + 1) :
             searchItem = "Anno+1800";
-        }
+
         const targetsearch = `https://www.google.de/search?tbm=shop&hl=de&psb=1&ved=2ahUKEwjk5vusjp6AAxWBS0ECHcLVAakQu-kFegQIABAL&q=${searchItem}&gs_lcp=Cgtwcm9kdWN0cy1jYxADUABYAGAAaABwAHgAgAEAiAEAkgEAmAEA&sclient=products-cc`
         const shoppingLink = document.getElementById("shoppingLink");
         shoppingLink.setAttribute("href", targetsearch)
         const displaySearchItem = searchItem.replace("+", " ");
         shoppingLink.innerHTML = displaySearchItem;
         document.getElementById("iframe").setAttribute("src", targetsearch);
-    }</script>
+    }
+</script>
