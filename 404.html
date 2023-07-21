@@ -7,10 +7,7 @@
 
 <body></body>
 <script>
-        const href = window.location.href;
-        console.log("href", href);
-        console.log("Pathname", window.location.pathname);
-        window.location.href = "/?" + window.location.pathname.replaceAll("/", "")
+    window.location.href = "/?" + window.location.pathname.replaceAll("/", "")
 </script>
 
 </html>
