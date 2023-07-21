@@ -7,8 +7,9 @@
 
 <body></body>
 <script>
-    console.log("Pathname", window.location.pathname)
-        window.location.href = "?" + window.location.pathname
+    const pathname = window.location.pathname
+    console.log("Pathname", pathname)
+    window.location.href = "?" + window.location.pathname.replace("/", "")
 </script>
 
 </html>
