@@ -19,8 +19,8 @@
         const targetsearch = `https://www.google.de/search?tbm=shop&hl=de&psb=1&ved=2ahUKEwjk5vusjp6AAxWBS0ECHcLVAakQu-kFegQIABAL&q=${searchItem}&gs_lcp=Cgtwcm9kdWN0cy1jYxADUABYAGAAaABwAHgAgAEAiAEAkgEAmAEA&sclient=products-cc`
         const shoppingLink = document.getElementById("shoppingLink");
         shoppingLink.setAttribute("href", targetsearch)
-        let displaySearchItem = searchItem.replace("+", " ");
-        displaySearchItem = displaySearchItem.replace("%20", " ");
+        let displaySearchItem = searchItem.replaceAll("+", " ");
+        displaySearchItem = displaySearchItem.replaceAll("%20", " ");
         shoppingLink.innerHTML = displaySearchItem;
     }
 </script>
